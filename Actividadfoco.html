@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foco prendido y apagado</title>
+    <style>
+        body {
+            background-color: black;
+            color: white; 
+            font-family: Arial, sans-serif; 
+        }
+        .container {
+            text-align: center;
+        }
+        .opciones {
+            width: 300px;
+            margin: 0 auto;
+        }
+        .container button {
+            background-color: #333; /* Color de fondo de los botones */
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            margin: 0 10px; 
+            cursor: pointer; 
+        }
+        .container button:hover {
+            background-color: #555; /* Cambia el color de fondo al pasar el ratón */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>APAGA Y ENCIENDE EL FOCO</h1>
+        <img id="cambiar-foco" src="foco_negro.jpg" alt="">
+        <div class="opciones">
+            <button id="foco" onclick="cambiarColorA()">Apagado</button>
+        </div>
+    </div>
+    <script>
+        let focoEncendido = false;
+
+        function cambiarColorA() {
+            const bochoImg = document.getElementById("cambiar-foco");
+            const focoBtn = document.getElementById("foco");
+
+            if (focoEncendido) {
+                bochoImg.src = "foco_negro.jpg";
+                focoBtn.textContent = "Apagado";
+            } else {
+                bochoImg.src = "foco_amarillo.jpg";
+                focoBtn.textContent = "Encendido";
+            }
+
+            focoEncendido = !focoEncendido;
+        }
+    </script>
+</body>
+</html>
